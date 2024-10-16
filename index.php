@@ -24,7 +24,7 @@ if ( !isset($_SESSION['tasks']) ) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400'500;700&display=swap" reel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400'500;700&display=swap" rel="stylesheet">
         <title>Gerenciador de Tarefas</title>
 </head>
  <body> 
@@ -56,11 +56,11 @@ if ( !isset($_SESSION['tasks']) ) {
         <input type="hidden"name="insert" value="insert">
         <label for="task_name">Tarefa:</label>
         <input type="text" name="task_name" placeholder="Nome da tarefa">
-        <label for="task_descriptio">Descrição:</label>
+        <label for="task_description">Descrição:</label>
         <input type="text" name="task_description" placeholder="Descrição da Tarefa">
         <label for="task_date">Data</label>
         <input type="date" name="task_date">
-        <label form="task_image">Imagem:</label>
+        <label for="task_image">Imagem:</label>
         <input type="file" name="task_image">
         <button type="submit">Cadastrar</button>
         </form> 
