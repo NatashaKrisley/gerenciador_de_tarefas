@@ -11,7 +11,6 @@ if ( isset( $_POST['task_name'] ) ) {
         if ( isset ($_FILES['task_image'])) {
             // Define a extensão e o nome do arquivo (com um hash para evitar duplicidade)
             $ext =strtolower( substr( $_FILES['task_image']['name'], -4 ) );
-            //$ext =strtolower( substr( $_FILES['task_image']['name'], -4 ) );
             $file_name = md5( date('Y.m.d.H.i.s')) . $ext;
             //$file_name = md5( date('Y.m.d.H.i.s') ) .$ext;
             $dir = 'uploads/';
@@ -20,6 +19,13 @@ if ( isset( $_POST['task_name'] ) ) {
             move_uploaded_file( $_FILES['task_image']['tmp_name'], $dir.$file_name );
         }
         
+        $data = [
+            'task_name'=> $_POST['task_name'],
+            'task_descrition'=> $_POST['task_description'],
+            'task_date'=> $_POST['task_date'],
+            'task_image'=> $file_name,
+        ];
+
         // task eu consigo ver que os dados nao foram cadastrados 
         $stmt = $conn->prepare('INSERT INTO tasks (task_name, task_description, task_image, task_date)
                             VALUES (:name, :description, :image, :date)');
